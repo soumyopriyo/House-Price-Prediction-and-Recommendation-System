@@ -1,0 +1,64 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 10vh;
+  }
+  .box{
+    background-color: black;
+    width: 40%;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    opacity: 50%;
+    box-shadow: 2px 2px 2px 2px black;
+  }
+  input{
+    width: 50%;
+    margin-bottom: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+  }
+  .button{
+    width: 25%;
+  }
+  a:hover{
+    color: blue;
+  }
+  a{
+    color: rgb(255, 255, 255);
+  }
+  h1{
+    color: white;
+  }
+  #camButtons a{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    align-items: center;
+    text-decoration: none;
+    width: 20%;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin: 5px;
+}
+#logout a{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+}
+#camButtons a:hover, #logout a:hover{
+   opacity: 80%;
+}
+#camButtons{
+display: flex;
+justify-content: space-around;
+margin-top: 100px;
+margin-bottom: 50px;
+} 

@@ -1,0 +1,23 @@
+<html lang="en" dir="ltr">
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head> 
+    <body style="background-image: url(static/loggg.jpg);">
+		<center>
+      <h1 style="color:white;">House Price Prediction and Recommendation_</h1>
+    	<div class="box">
+  			<h1>Log In</h1>
+  			<form method="post" action="{{ url_for('index')}}">
+    			<input type="text" name="name" id="username" placeholder="Username" required/>
+    			<br>
+    			<input type="password" name="password" id="password" placeholder="Password" required/>
+    			<br>
+				<input type="submit" class="button" name="Submit"/>
+  			</form>
+			<p>{{ msg }}</p>
+			<p><strong><a href="{{url_for('signup')}}">Click here</a></strong> to Signup</p>
+		</div>
+	</center>
+	</body>
+</html>

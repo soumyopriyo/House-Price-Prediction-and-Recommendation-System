@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Logged in</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+    <body style="background-image: url(static/blue.jpg);">
+        <center>
+        <h1 style="color:white;">House Price Prediction</h1>
+        
+        <div class="container">
+            <form action="\predict" method="POST" action="{{ url_for('predict') }}">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(194, 182, 182) ;">City</h4>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="City" style="width:620px;height:35px"; >
+                                            <option disabled="disabled" selected="selected">City</option>
+                                            <option value="Banglore">Banglore</option>
+                                            <option value="Chennai">Chennai</option>
+                                            <option value="Kolkata">Kolkata</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(194, 182, 182) ;">Location</h4>
+                                <div>
+                                    <input type="text" name="Location" id="Location" required="required" placeholder="Enter Location"><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(194, 182, 182) ;">LiftAvailable</h4>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="LiftAvailable" style="width:620px;height:35px"; >
+                                        <option disabled="disabled" selected="selected">LiftAvailable</option>
+                                        <option value="0">No</option>
+                                        <option value="1">yes</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(194, 182, 182) ;">Square Footage</h4>
+                                <input type="text" name="Area" id="Area" required="required" placeholder="Enter Square Footage"><br>
+                                <h5 style="color:rgb(194, 182, 182)">Eg: 1200, 2000</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(194, 182, 182) ;">BHK</h4>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select name="bhk" style="width:620px;height:35px"; >
+                                        <option disabled="disabled" selected="selected">bhk</option>
+                                        <option value="1">1BHK</option>
+                                        <option value="2">2BHK</option>
+                                        <option value="3">3BHK</option>
+                                        <option value="4">4BHK</option>
+                                        <option value="5">5BHK</option>
+                                        <option value="6">6BHK</option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="color: rgb(194, 182, 182) ;">Resale</h4>
+                                <div class="rs-select2 js-select-simple select--no-search"></div>
+                                <select name="Resale" id="Resale" required="required" style="width:620px;height:35px"; >
+                                    <option disabled="disabled" selected="selected">Resale</option>
+                                    <option value="0">No</option>
+                                    <option value="1">yes</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- Submit -->
+                <button type="submit" value="Submit" class="btn btn-secondary" style="background-color: rgb(68, 154, 68); border-radius:5px; border-color:rgb(68, 154, 68) ;color:whitesmoke; font-size: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;">Estimate Price</button>
+                <br><br>
+            </div>
+        </form> 
+        <h3 style="color:rgb(1, 0, 0);">{{ prediction_text }}</h3><br>
+        <p style="color: red; font-size: 25px;">Houses Recommended for you!! Click Below</p>
+        <a href="/recommend"><button class="btn btn-success" style="background-color: rgb(68, 154, 68); border-radius:5px; border-color:rgb(68, 154, 68) ;color:whitesmoke; font-size: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;">Recommendation</button></a>
+
+    </center>
+</body>
+</html>
